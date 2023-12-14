@@ -40,13 +40,21 @@ input {
 }
 
 .converterButton {
-    width: 100%;
+    width: 100%; 
     padding: 10px;
     border-radius: 4px;
     cursor: pointer;
-    background-color: darkgray;
+    background-color: #e5e4e4;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.6); 
+    border: 0; 
+    transition: all ease .3s; 
+    border: 1px solid #ccc;  
+    border-bottom: 5px solid #ccc; 
+} 
+.converterButton.disable {
+    opacity: .5;
+    pointer-events: none;
 }
-
 .convertButtonAC{
     width: 100%;
     padding: 10px;

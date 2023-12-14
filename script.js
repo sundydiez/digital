@@ -1,4 +1,5 @@
 let activeInput = document.getElementById('hexField'); 
+let disableKeys = []; 
 
 document.addEventListener("DOMContentLoaded", function () {
     var inputFields = document.querySelectorAll("input[type='text']");
@@ -13,8 +14,24 @@ document.addEventListener("DOMContentLoaded", function () {
             if(this.id === field.id) {
                 field.classList.add('active'); 
                 activeInput = this; 
-            }else {
-                console.log('eeeee'); 
+
+                if(this.id === 'octalField') {
+                    disableKeys = ['A', 'B', 'C', 'D', 'E', 'F', '8', '9']; 
+                }else if(this.id === 'binaryField') {
+                    disableKeys = ['2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']; 
+                }else if(this.id === 'decimalField') {
+                    disableKeys = ['A', 'B', 'C', 'D', 'E', 'F']; 
+                }else {
+                    disableKeys = []; 
+                }
+                const btns = document.getElementsByClassName("converterButton");
+                for (let i = 0; i < btns.length; i++) {
+                    if (disableKeys.includes(btns[i].id)) {
+                        btns[i].classList.add('disable');
+                    } else {
+                        btns[i].classList.remove('disable');
+                    }
+                }
             }
         });
         field.addEventListener("input", function () {
@@ -57,16 +74,9 @@ function handleInput(inputField) {
 }
 
 function appendToField(targetFieldId, value) {
-    // var activeField = document.getElementById(targetFieldId);
-    // console.log('activeInput', activeInput.id); 
-    // console.log('targetFieldId', targetFieldId)
-
-
-
     var accc = document.getElementById(activeInput.id); 
 
     if (accc.tagName === 'INPUT' && accc.type === 'text') {
-        console.log(accc.id); 
 
         if (value === 'AC') {
             accc.value = '';
@@ -75,9 +85,6 @@ function appendToField(targetFieldId, value) {
         } else {
             appendHexToField(accc, value);
         }
-
-        console.log(value)
-
         handleInput(accc);
     }
     
