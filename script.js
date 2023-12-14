@@ -1,6 +1,22 @@
+let activeInput = document.getElementById('hexField'); 
+
 document.addEventListener("DOMContentLoaded", function () {
     var inputFields = document.querySelectorAll("input[type='text']");
     inputFields.forEach(function (field) {
+        field.addEventListener('click', function() {
+            const inputs = document.querySelectorAll("input[type='text']");
+            inputs.forEach(function(input) {
+                input.classList.remove('active');
+                
+            });
+
+            if(this.id === field.id) {
+                field.classList.add('active'); 
+                activeInput = this; 
+            }else {
+                console.log('eeeee'); 
+            }
+        });
         field.addEventListener("input", function () {
             if (field.id === 'decimalField') {
                 field.value = field.value.replace(/[^\d.]/g, '');
@@ -17,6 +33,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function handleInput(inputField) {
+    if(!activeInput) {
+        activeInput = document.getElementById('hexField'); 
+    }
+
+    // console.log(activeInput)
     var inputValue = inputField.value;
 
     if (!inputValue) {
@@ -36,18 +57,43 @@ function handleInput(inputField) {
 }
 
 function appendToField(targetFieldId, value) {
-    var activeField = document.getElementById(targetFieldId);
+    // var activeField = document.getElementById(targetFieldId);
+    // console.log('activeInput', activeInput.id); 
+    // console.log('targetFieldId', targetFieldId)
 
-    if (activeField.tagName === 'INPUT' && activeField.type === 'text') {
+
+
+    var accc = document.getElementById(activeInput.id); 
+
+    if (accc.tagName === 'INPUT' && accc.type === 'text') {
+        console.log(accc.id); 
+
         if (value === 'AC') {
-            activeField.value = '';
+            accc.value = '';
         } else if (value === 'DEL') {
-            activeField.value = activeField.value.slice(0, -1);
+            accc.value = accc.value.slice(0, -1);
         } else {
-            appendHexToField(activeField, value);
+            appendHexToField(accc, value);
         }
-        handleInput(activeField);
+
+        console.log(value)
+
+        handleInput(accc);
     }
+    
+    // var activeField = document.getElementById(targetFieldId);
+
+
+    // if (activeField.tagName === 'INPUT' && activeField.type === 'text') {
+    //     if (value === 'AC') {
+    //         activeField.value = '';
+    //     } else if (value === 'DEL') {
+    //         activeField.value = activeField.value.slice(0, -1);
+    //     } else {
+    //         appendHexToField(activeField, value);
+    //     }
+    //     handleInput(activeField);
+    // }
 }
 
 function appendHexToField(field, value) {
