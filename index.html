@@ -1,50 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Numeral System Converter</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div>
-        <button class="logout" onclick="logout">Log out</button>
-    </div>
-    <div id="frame">
-        <div id="converterPanel">
-            <label for="decimalField">Decimal:</label>
-            <input type="text" id="decimalField">
-            <label for="binaryField">Binary:</label>
-            <input type="text" id="binaryField">
-            <label for="octalField">Octal:</label>
-            <input type="text" id="octalField">
-            <label for="hexField">Hexadecimal:</label>
-            <input type="text" id="hexField">
-            <div id="numericKeypad">
-                <div> </div>
-                <div> </div>
-                <button class="convertButtonAC" onclick="appendToField('hexField', 'AC')">AC</button>
-                <button class="convertButtondl" onclick="appendToField('hexField', 'DEL')">DEL</button>
-                <button id="7" class="converterButton" onclick="appendToField('hexField', '7')">7</button>
-                <button id="8" class="converterButton" onclick="appendToField('hexField', '8')">8</button>
-                <button id="9" class="converterButton" onclick="appendToField('hexField', '9')">9</button>
-                <button id="F" class="converterButton" onclick="appendToField('hexField', 'F')">F</button>
-                <button id="4" class="converterButton" onclick="appendToField('hexField', '4')">4</button>
-                <button id="5" class="converterButton" onclick="appendToField('hexField', '5')">5</button>
-                <button id="6" class="converterButton" onclick="appendToField('hexField', '6')">6</button>
-                <button id="E" class="converterButton" onclick="appendToField('hexField', 'E')">E</button>
-                <button id="1" class="converterButton" onclick="appendToField('hexField', '1')">1</button>
-                <button id="2" class="converterButton" onclick="appendToField('hexField', '2')">2</button>
-                <button id="3" class="converterButton" onclick="appendToField('hexField', '3')">3</button>
-                <button id="D" class="converterButton" onclick="appendToField('hexField', 'D')">D</button>
-                <button id="0" class="converterButton" onclick="appendToField('hexField', '0')">0</button>
-                <button id="A" class="converterButton" onclick="appendToField('hexField', 'A')">A</button>
-                <button id="B" class="converterButton" onclick="appendToField('hexField', 'B')">B</button>
-                <button id="C" class="converterButton" onclick="appendToField('hexField', 'C')">C</button>
-            </div>
-        </div>
-    </div>
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="./login.css" />
+        
+    </head>
+    <body>
+        <div class="login-container box-shadow" id="test">
+            <h1>Login</h1>
+            <form class="mt-[30px]" id="loginForm">
+              <div class="form-item">
+                <input class="form-control" type="password" placeholder="Password" value="" id="password">
+                <p class="error-message hidden" id="error-message">
+                  Invalid password. Please try again. 
+                </p>
+              </div>
+              <div class="form-action mt-[15px]">
+                <button class="btn-primary text-[20px] font-bold rounded-[6px] w-full">
+                  Log In
+                </button>
+              </div>
+            </form>
+          </div>
 
-    <script src="script.js"></script>
-</body>
+          <script src="./login.js"></script>
+    </body>
 </html>
