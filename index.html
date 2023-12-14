@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Login</title>
-        <link rel="stylesheet" href="./login.css" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div class="login-container box-shadow" id="test">
-            <h1>Login</h1>
-            <form class="mt-[30px]" id="loginForm">
-              <div class="form-item">
-                <input class="form-control" type="password" placeholder="Password" value="" id="password">
-                <p class="error-message hidden" id="error-message">
-                  Invalid password. Please try again. 
-                </p>
-              </div>
-              <div class="form-action mt-[15px]">
-                <button class="btn-primary text-[20px] font-bold rounded-[6px] w-full">
-                  Log In
-                </button>
-              </div>
-            </form>
-          </div>
-
-          <script src="./login.js"></script>
-    </body>
+  <head>
+    <title>Login</title>
+      <link rel="stylesheet" href="./login.css" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  
+  <body>
+      <div class="login-container box-shadow" id="test">
+          <form class="mt-[30px]" id="loginForm">
+            <div class="form-item">
+              <input class="form-control" type="username" placeholder="Username" value="" id="username">
+              <input class="form-control" type="password" placeholder="Password" value="" id="password">
+              <p class="error-message hidden" id="error">
+                Invalid username or password. Please try again. 
+              </p>
+              </p>
+            </div>
+            <div class="form-action mt-[15px]">
+              <button class="btn-primary text-[20px] font-bold rounded-[6px] w-full">
+                Log In
+              </button>
+            </div>
+          </form>
+        </div>
+        <script src="./login.js"></script>
+  </body>
 </html>

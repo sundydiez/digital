@@ -12,9 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if(this.id === field.id) {
                 field.classList.add('active'); 
-                activeInput = this; 
-
-                
+                activeInput = this;
                 if(this.id === 'octalField') {
                     disableKeys = ['A', 'B', 'C', 'D', 'E', 'F', '8', '9']; 
                 }else if(this.id === 'binaryField') {
@@ -54,9 +52,7 @@ function handleInput(inputField) {
         activeInput = document.getElementById('hexField'); 
     }
 
-    // console.log(activeInput)
     var inputValue = inputField.value;
-
     if (!inputValue) {
         clearFields();
         return;
@@ -85,24 +81,9 @@ function appendToField(targetFieldId, value) {
             accc.value = accc.value.slice(0, -1);
         } else {
             appendHexToField(accc, value);
-            // console.log('activeInput', activeInput)
         }
         handleInput(accc);
     }
-    
-    // var activeField = document.getElementById(targetFieldId);
-
-
-    // if (activeField.tagName === 'INPUT' && activeField.type === 'text') {
-    //     if (value === 'AC') {
-    //         activeField.value = '';
-    //     } else if (value === 'DEL') {
-    //         activeField.value = activeField.value.slice(0, -1);
-    //     } else {
-    //         appendHexToField(activeField, value);
-    //     }
-    //     handleInput(activeField);
-    // }
 }
 
 
