@@ -1,0 +1,71 @@
+body {
+font-family: Arial, sans-serif;
+background-color: #f4f4f4;
+margin: 0;
+height: 100vh;
+}
+
+#frame {
+    width: 340px;
+    height: 540px;
+    margin-left: 480px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#converterPanel {
+    width: 300px;
+    height: 500px;
+    padding: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#numericKeypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.converterButton {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: darkgray;
+}
+
+.convertButtonAC{
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: red;
+}
+
+.convertButtondl {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: orange;
+}
+
+.logout {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
