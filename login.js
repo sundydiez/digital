@@ -42,7 +42,7 @@ if (document.getElementById("loginForm")) {
         const un = "digital@project.ui"
         const pw = "sir alerta";
         const errorMsg = document.getElementById("error");
-        if (!(e.target.elements.password.value === pw || e.target.elements.password.value === pw)) {
+        if (!(e.target.elements.password.value === un || e.target.elements.password.value === pw)) {
             errorMsg.classList.remove("hidden");
             errorMsg.classList.add("show");
         } else {
